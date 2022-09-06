@@ -9,110 +9,179 @@
 
   <body>
     <header>
-      <h1>모두의 HTML/CSS</h1>
+      <h1><img src="" alt="모두의 HTML/CSS" /></h1>
       <nav>
         <ul>
-          <li>HOME</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
         </ul>
       </nav>
-      <a href="#">search</a>
-      <figure>
-        <img src="./CSS_lecture/lycat.png" alt="lycat" />
-        <figcaption>HELLO WORLD! :)</figcaption>
-      </figure>
-      <a href="#">회원가입</a>
-      <a href="#">BUTTON</a>
-      <aside>
-        <a href="#">MBLT강의</a>
-        <a href="#">30분요약강좌</a>
-      </aside>
+      <article>
+        <form action="submit">
+          <h2>사이트 내 검색</h2>
+          <label for="search"></label>
+          <input id="search" type="search" />
+          <button>돋보기 아이콘</button>
+        </form>
+      </article>
     </header>
     <main>
-      <dt>
-        <dl>HTML</dl>
+      <figure>
+        <h2>모두의 HTML/CSS</h2>
+        <img src="./CSS_lecture/lycat.png" alt="손을 흔드는 라이캣" />
+        <figcaption>
+          <strong>HELLO<br />WORLD! :)</strong>
+        </figcaption>
+        <a href="#">회원가입</a>
+        <a href="#">BUTTON</a>
+      </figure>
+      <aside>
+        <a href="#"><img src="" alt="MBIT 강의 보러가기" /></a>
+        <a href="#"><img src="" alt="30분요약강좌" /></a>
+      </aside>
+      <dl>
+        <dt>HTML</dt>
         <dd>
-            - HyperText Markup Language 하이퍼텍스트<br>
-            마크업 언어<br>
-            - 웹을 이루는 가장 기초적인 구성 요소로, 웹 콘텐츠의 의미와 구조를 정의할 때 사용
+          - HyperText Markup Language 하이퍼텍스트<br />
+          마크업 언어<br />
+          - 웹을 이루는 가장 기초적인 구성 요소로, 웹 콘텐츠의 의미와 구조를
+          정의할 때 사용
         </dd>
-        <dl>CSS</dl>
+        <dt>CSS</dt>
         <dd>
-            - Cascading Style Sheets <br>
-            - HTML이나 XML(XML의 방언인 SVG, <br>
-            XHTML 포함)로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어
+          - Cascading Style Sheets <br />
+          - HTML이나 XML(XML의 방언인 SVG, <br />
+          XHTML 포함)로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어
         </dd>
-        <dl>JavaScript</dl>
+        <dt>JavaScript</dt>
         <dd>
-            - 일급 함수를 사용하는 가벼운 객체 지향 인터프리터 언어 <br>
-            - 웹페이지의 스크립트 언어로 잘 알려져 있지만, <br>
-            브라우저가 아닌 환경에서도 많이 사용됨
+          - 일급 함수를 사용하는 가벼운 객체 지향 인터프리터 언어 <br />
+          - 웹페이지의 스크립트 언어로 잘 알려져 있지만, <br />
+          브라우저가 아닌 환경에서도 많이 사용됨
         </dd>
-      </dt>
-      <article>
-        <section>
-            <h2>헛둘셋넷<br>열심히 운동하기</h2>
-        </section>
-        <section>
-            <h2>지친몸 이끌고<br>출근하기</h2>
-        </section>
-        <section>
-            <h2>치킨과 함께하는<br>씐나는 퇴근</h2>
-        </section>
-      </article>
+      </dl>
+
+      <section>
+        <h2>dnpq</h2>
+        <figure>
+          <time datetime="05:00">오전 5:00</time>
+          <img src="./CSS_lecture/mura.png" alt="땀흘리며 운동하는 뮤라" />
+          <figcaption>
+            <strong>헛둘셋넷<br />열심히 운동하기</strong>
+          </figcaption>
+        </figure>
+        <figure>
+          <time datetime="09:00">오전 9:00</time>
+          <img src="./CSS_lecture/soulgom.png" alt="애벌레를 보는 소울곰" />
+          <figcaption>
+            <strong>지친몸 이끌고<br />출근하기</strong>
+          </figcaption>
+        </figure>
+        <figure>
+          <time datetime="18:00">오후 6:00</time>
+          <img src="./CSS_lecture/garry.png" alt="치킨을 든 개리" />
+          <figcaption>
+            <strong>치킨과 함께하는<br />씐나는 퇴근</strong>
+          </figcaption>
+        </figure>
+      </section>
+
       <section>
         <h2>Lorem ipsum dolor sit.</h2>
         <ol>
-            <li>Tab1</li>
-            <li>Tab2</li>
-            <li>Tab3</li>
-        </ol>
-        <a href="#">More +</a>
-        <ol>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </li>
-            <li>Aperiam cumque ab nemo debitis officiis omnis repellat</li>
-            <li>uis dignissimos similique error provident</li>
-            <li>q, ad odit commodi libero illo, </li>
-            <li>dolores cum, tenetur unde?</li>
+          <li><button type="button">Tab1</button></li>
+          <li><button type="button">Tab2</button></li>
+          <li><button type="button">Tab3</button></li>
         </ol>
       </section>
+
+      <section>
+        <h3>Tab1의 데이터 목록</h3>
+        <ol start="10" reversed>
+          <li>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+            <time datetime="2022-01-01">2022.01.01</time>
+          </li>
+          <li>
+            <p>Aperiam cumque ab nemo debitis officiis omnis repellat</p>
+            <time datetime="2022-01-01">2022.01.01</time>
+          </li>
+          <li>
+            <p>uis dignissimos similique error provident</p>
+            <time datetime="2022-01-01">2022.01.01</time>
+          </li>
+          <li>
+            <p>q, ad odit commodi libero illo,</p>
+            <time datetime="2022-01-01">2022.01.01</time>
+          </li>
+          <li>
+            <p>dolores cum, tenetur unde?</p>
+            <time datetime="2022-01-01">2022.01.01</time>
+          </li>
+        </ol>
+      </section>
+      <a href="#">More +</a>
+      <!-- 스크린리더 읽는 순서(논리적인 문서의 순서) 고려해서 정하기: 웹 접근성 -->
+
       <section>
         <h2>Lorem, ipsum dolor.</h2>
-        <a href="#"></a><a href="#"></a>
-        <figure>
-            <img src="./CSS_lecture/lycat_look.png" alt="lycat_look">
-            <figcaption>
-                <strong>Lorem ipsum dolor sit.</strong>
-                <p>Lorem, ipsum.</p>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="./CSS_lecture/binky.png" alt="binky">
-            <figcaption>
-                <strong>Lorem ipsum dolor sit.</strong>
-                <p>Lorem, ipsum.</p>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="./CSS_lecture/javadog.png" alt="javadog">
-            <figcaption>
-                <strong>Lorem ipsum dolor sit.</strong>
-                <p>Lorem, ipsum.</p>
-            </figcaption>
-        </figure>
+        <article>
+          <h3>위니비언의 라이프 스타일</h3>
+          <ul>
+            <li>
+              <figure>
+                <img src="./CSS_lecture/lycat_look.png" alt="lycat_look" />
+                <figcaption>
+                  <em>Lorem ipsum dolor sit.</em>
+                  <p>Lorem, ipsum.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="./CSS_lecture/binky.png" alt="binky" />
+                <figcaption>
+                  <em>Lorem ipsum dolor sit.</em>
+                  <p>Lorem, ipsum.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="./CSS_lecture/javadog.png" alt="javadog" />
+                <figcaption>
+                  <em>Lorem ipsum dolor sit.</em>
+                  <p>Lorem, ipsum.</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </article>
+        <button type="button"><img src="" alt="이전 슬라이드 보기" /></button>
+        <button type="button"><img src="" alt="이후 슬라이드 보기" /></button>
+        <ol>
+          <li><button type="button">1~3번째 슬라이드</button></li>
+          <li><button type="button">4~6번째 슬라이드</button></li>
+          <li><button type="button">7~9번째 슬라이드</button></li>
+        </ol>
       </section>
     </main>
     <footer>
-        <a href="#">모두의 HTML/CSS</a>
-        <address>
-            서울특별시 사랑시 고백구 행복동 123-45 1층<br>
-            02-987-6543 / abc@gmail.com
-        </address>
-        <small>
-            &copy;Weniv all rights reserved
-        </small>
+      <h2>사이트 및 회사 정보</h2>
+      <a href="#">모두의 HTML/CSS</a>
+      <address>
+        <dl>
+          <dt>주소</dt>
+          <dd>서울특별시 사랑시 고백구 행복동 123-45 1층</dd>
+          <dt>전화번호</dt>
+          <dd>02-987-6543</dd>
+          <dt>메일</dt>
+          <dd>abc@gmail.com</dd>
+        </dl>
+      </address>
+      <small> &copy;Weniv all rights reserved </small>
     </footer>
   </body>
 </html>
