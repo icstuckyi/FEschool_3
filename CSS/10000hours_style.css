@@ -1,0 +1,14 @@
+body {
+  background-color: #5b2386;
+  color: white;
+}
+.screen_out {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+.modal {
+}
