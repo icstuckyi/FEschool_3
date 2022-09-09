@@ -20,7 +20,7 @@ li {
 }
 /* Components */
 body {
-  background-image: url("background.gif");
+  background-image: url("../essential/images/background.gif");
 }
 .wrapper {
   background-color: #ddd;
@@ -33,7 +33,7 @@ body {
   text-align: center;
   padding: 100px 0;
   background-size: cover;
-  background-image: url("cover.png");
+  background-image: url("../essential/images/cover.png");
 }
 
 .header img {
@@ -58,10 +58,10 @@ body {
   padding: 20px;
 }
 .information {
-  background-image: url("icon-information.png");
+  background-image: url("../essential/images/icon-information.png");
 }
 .skill {
-  background-image: url("icon-skills.png");
+  background-image: url("../essential/images/icon-skills.png");
 }
 .section h2 {
   font-weight: bold;
