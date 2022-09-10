@@ -1,6 +1,40 @@
+/* reset */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
+  width: 1920px;
+  height: 1963px;
   background-color: #5b2386;
   color: white;
+  font-family: GmarketSansMedium;
+  font-weight: 300;
+  text-align: center;
+  padding-top: 219px;
+  font-size: 24px;
+  font-style: normal;
+  line-height: 24px;
+}
+input:focus {
+  outline: none;
+}
+input:valid {
+  font-family: GmarketSansMedium;
+  font-size: 24px;
+}
+button {
+  padding: 21px 49px;
+  font-family: GmarketSansMedium;
+  color: #5b2386;
+  background-color: #fcee21;
+  border-radius: 56px;
+  border: none;
+  font-size: 24px;
+  font-weight: 700;
 }
 .screen_out {
   position: absolute;
@@ -9,6 +43,51 @@ body {
   height: 1px;
   margin: -1px;
   overflow: hidden;
+}
+
+/* components */
+h1 img:first-child {
+  width: 221.6px;
+  height: 225px;
+}
+h1 img:nth-child(2) {
+  width: 564px;
+  height: 112px;
+}
+
+.sec_practice {
+  margin: 118px 0px;
+  display: inline-block;
+  line-height: 35px;
+}
+.sec_practice strong {
+  font-size: 30px;
+  font-weight: 600;
+}
+.sec_calculate {
+  line-height: 60px;
+}
+.sec_calculate form p:first-child {
+  margin-bottom: 20px;
+}
+.sec_calculate form p:last-child {
+  margin-bottom: 115px;
+}
+.sec_calculate input {
+  width: 228px;
+  height: 57px;
+  border: none;
+  border-radius: 10px;
+  margin: 0px 10px;
+}
+.sec_calculate input::placeholder {
+  text-align: center;
+  font-family: GmarketSansMedium;
+  font-size: 24px;
+  color: #babcbe;
+}
+.sec_calculate form img {
+  margin-top: 10px;
 }
 .modal {
 }
