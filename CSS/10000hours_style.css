@@ -14,10 +14,11 @@ body {
   font-family: GmarketSansMedium;
   font-weight: 300;
   text-align: center;
-  padding-top: 219px;
+  padding-top: 140px;
   font-size: 24px;
   font-style: normal;
   line-height: 24px;
+  position: relative;
 }
 input:focus {
   outline: none;
@@ -46,32 +47,48 @@ button {
 }
 
 /* components */
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 300px;
+}
 h1 img:first-child {
-  width: 221.6px;
+  position: absolute;
+  width: 221px;
   height: 225px;
 }
 h1 img:nth-child(2) {
   width: 564px;
   height: 112px;
+  z-index: 1;
 }
-
+h1 img:last-child {
+  position: absolute;
+  top: 400px;
+}
+/* main */
 .sec_practice {
-  margin: 118px 0px;
-  display: inline-block;
+  margin-bottom: 118px;
   line-height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sec_practice h2 {
+  display: inline-block;
+  margin: 0px 30px;
 }
 .sec_practice strong {
   font-size: 30px;
   font-weight: 600;
 }
+
 .sec_calculate {
-  line-height: 60px;
+  line-height: 80px;
 }
-.sec_calculate form p:first-child {
-  margin-bottom: 20px;
-}
-.sec_calculate form p:last-child {
-  margin-bottom: 115px;
+.sec_calculate p {
+  margin-bottom: 118px;
 }
 .sec_calculate input {
   width: 228px;
@@ -86,8 +103,51 @@ h1 img:nth-child(2) {
   font-size: 24px;
   color: #babcbe;
 }
-.sec_calculate form img {
-  margin-top: 10px;
+.sec_calculate form {
+  position: relative;
 }
-.modal {
+.sec_calculate img {
+  position: absolute;
+  bottom: -7px;
 }
+
+.sec_result {
+  margin: 115px 0px;
+  line-height: 80px;
+}
+.sec_result_text {
+  margin-bottom: 118px;
+}
+.sec_result p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sec_result strong {
+  font-size: 72px;
+  font-weight: 700;
+  margin: 0px 15px;
+}
+.sec_result button:last-child {
+  background-color: white;
+  margin-left: 15px;
+  padding: 24px 49px;
+}
+/* footer */
+.copyright {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+}
+.copyright img {
+  margin: 15px;
+}
+
+/* #modal {
+} */
