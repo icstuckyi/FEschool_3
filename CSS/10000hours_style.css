@@ -7,17 +7,19 @@
   font-style: normal;
 }
 @import "10000hours_media.css";
-
+/* 1rem = 10px */
+html {
+  font-size: 62.5%;
+}
 body {
   height: 1963px;
   min-width: 360px;
   background-color: #5b2386;
   color: white;
-  font-family: GmarketSansMedium;
-  font-weight: 300;
+  font-family: "GmarketSansMedium";
   text-align: center;
   padding-top: 140px;
-  font-size: 24px;
+  font-size: 2.5rem;
   font-style: normal;
   line-height: 24px;
   position: relative;
@@ -27,7 +29,7 @@ input:focus {
 }
 input:valid {
   font-family: GmarketSansMedium;
-  font-size: 24px;
+  font-size: 2.5rem;
 }
 button {
   padding: 21px 49px;
@@ -36,8 +38,9 @@ button {
   background-color: #fcee21;
   border-radius: 56px;
   border: none;
-  font-size: 24px;
+  font-size: 2.5rem;
   font-weight: 700;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .screen_out {
   position: absolute;
@@ -69,12 +72,12 @@ h1 img:nth-child(2) {
 }
 h1 img:last-child {
   position: absolute;
-  top: 400px;
+  top: 430px;
   /* margin: 0px auto; */
 }
 /* main */
 .sec_practice {
-  line-height: 35px;
+  line-height: 43px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,13 +105,13 @@ h1 img:last-child {
   width: 228px;
   height: 57px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   margin: 0px 10px;
 }
 .sec_calculate input::placeholder {
   text-align: center;
-  font-family: GmarketSansMedium;
-  font-size: 24px;
+  font-family: "GmarketSansMedium";
+  font-size: 2.5rem;
   color: #babcbe;
 }
 .sec_calculate form {
@@ -116,7 +119,7 @@ h1 img:last-child {
 }
 .sec_calculate img {
   position: absolute;
-  bottom: -7px;
+  bottom: -12px;
 }
 
 .sec_result {
@@ -133,7 +136,7 @@ h1 img:last-child {
   align-items: center;
 }
 .sec_result strong {
-  font-size: 72px;
+  font-size: 6rem;
   font-weight: 700;
   margin: 0px 15px;
 }
@@ -150,12 +153,12 @@ h1 img:last-child {
   transform: translate(-50%, -50%);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 1.5rem;
   line-height: 17px;
   white-space: nowrap;
 }
 .copyright img {
-  margin: 15px;
+  margin: 20px;
 }
 
 #modal {
@@ -179,13 +182,12 @@ h1 img:last-child {
 }
 #modal p {
   margin-top: 60px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 50px;
 }
 #modal p strong {
-  font-size: 60px;
+  font-size: 3.75rem;
 }
 #modal button {
   margin-top: 60px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }

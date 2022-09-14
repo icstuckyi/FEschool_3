@@ -1,0 +1,5 @@
+@media (min-width: 360) {
+  h1 img:first-child {
+    width: 2.5rem;
+  }
+}
