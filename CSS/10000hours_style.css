@@ -28,12 +28,12 @@ input:focus {
   outline: none;
 }
 input:valid {
-  font-family: GmarketSansMedium;
+  font-family: "GmarketSansMedium";
   font-size: 2.5rem;
 }
 button {
   padding: 21px 49px;
-  font-family: GmarketSansMedium;
+  font-family: "GmarketSansMedium";
   color: #5b2386;
   background-color: #fcee21;
   border-radius: 56px;
@@ -60,8 +60,6 @@ h1 {
 }
 h1 img:first-child {
   position: absolute;
-  /* width: 70%;
-  max-width: 225px; */
 }
 h1 img:nth-child(2) {
   height: auto;
@@ -73,8 +71,8 @@ h1 img:nth-child(2) {
 h1 img:last-child {
   position: absolute;
   top: 430px;
-  /* margin: 0px auto; */
 }
+
 /* main */
 .sec_practice {
   line-height: 43px;
@@ -145,14 +143,14 @@ h1 img:last-child {
   margin-left: 15px;
   padding: 24px 49px;
 }
+
 /* footer */
 .copyright {
   position: absolute;
   bottom: 80px;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   line-height: 17px;
   white-space: nowrap;
