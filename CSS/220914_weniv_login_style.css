@@ -1,11 +1,24 @@
 /* reset */
 /* 1rem = 10px */
-html {
+@font-face {
+  font-family: "Spoqa Han Sans Neo";
+  src: url("/essential/fonts/SpoqaHanSansNeo-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Spoqa Han Sans Neo";
+  src: url("/essential/fonts/SpoqaHanSansNeo-Regular.otf");
+  font-weight: 400;
+}
+:root {
   font-size: 62.5%;
+  font-family: "Spoqa Han Sans Neo";
 }
 .screen_out {
   position: absolute;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  /* clip은 deprecated 됐으므로 clip-path 대신 사용(웹접근성 시간에 다시 리뷰) */
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -19,6 +32,7 @@ html {
   /* width: 20vw; */
   background-color: white;
   padding: 1.9rem 1.6rem;
+  box-sizing: border-box;
 }
 
 .login_div p {
@@ -34,6 +48,7 @@ html {
   border: none;
   border-radius: 4px;
   color: white;
+  font-family: inherit;
   font-size: 1.2rem;
   margin: 1.5em 0em;
 }
@@ -41,9 +56,10 @@ html {
   height: 1.5rem;
   bottom: 3px;
 }
-.login_art a {
+.login_art a,
+span {
   font-size: 1.2rem;
-  font-weight: 400px;
+  font-weight: 400;
   line-height: 1.5rem;
   text-decoration: none;
   color: #767676;

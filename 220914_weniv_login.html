@@ -12,22 +12,25 @@
       <h1 class="screen_out">weniv 로그인</h1>
       <div class="login_div">
         <p>더 편리해진 위니브에 오신 것을 환영합니다.</p>
-        <button type="submit" method="post">
-          <img src="./essential/images/weniv_logo.png" />
+        <button>
+          <img src="./essential/images/weniv_logo.png" alt />
           로그인
         </button>
         <article class="login_art">
+          <!-- article 너무 작다. 이정도면 div써도 된다. -->
           <h2 class="screen_out">회원정보 찾기</h2>
           <div class="find_info">
             <a href="#"
-              ><img src="./essential/images/icon-lock.png" /> 아이디</a
+              ><img src="./essential/images/icon-lock.png" alt /> 아이디</a
             >
+            <!-- 가상요소 before, after를 사용하여 자물쇠, | 표시를 background-img써서 해결해보자. 
+            가상요소 안에 content:"" 주어야 스크린리더가 읽지않는다.-->
             <span>|</span>
             <a href="#">비밀번호 찾기</a>
           </div>
           <div class="sign_up">
             <a href="#"
-              ><img src="./essential/images/icon-user.png" />회원가입</a
+              ><img src="./essential/images/icon-user.png" alt />회원가입</a
             >
           </div>
         </article>
