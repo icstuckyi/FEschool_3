@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>div 색깔 바꾸기</title>
+    <style>
+      .colorbox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 0 auto;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+      }
+      li {
+        margin: 20px;
+        list-style-type: none;
+      }
+      .colorbox.red {
+        background-color: red;
+      }
+      .colorbox.green {
+        background-color: green;
+      }
+      .colorbox.blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="colorbox"></div>
+    <ul>
+      <li><button type="button" class="red">빨강</button></li>
+      <li><button type="button" class="green">초록</button></li>
+      <li><button type="button" class="blue">파랑</button></li>
+    </ul>
+    <script>
+      const colorbox = document.querySelector(".colorbox");
+      const btnRed = document.querySelector(".red");
+      const btnGreen = document.querySelector(".green");
+      const btnBlue = document.querySelector(".blue");
+
+      const btnArr = [btnRed, btnGreen, btnBlue];
+
+      btnArr.forEach((item) => {
+        item.addEventListener("click", () => {
+          colorbox.classList = "colorbox";
+          if (item.classList.contains("red")) {
+            colorbox.classList.add("red");
+          } else if (item.classList.contains("green")) {
+            colorbox.classList.add("green");
+          } else if (item.classList.contains("blue")) {
+            colorbox.classList.add("blue");
+          }
+        });
+      });
+      //   btnRed.addEventListener("click", () => {
+      //     colorbox.classList.remove("green", "blue", "red");
+      //     colorbox.classList.add("red");
+      //   });
+      //   btnGreen.addEventListener("click", () => {
+      //     colorbox.classList = "colorbox";
+      //     colorbox.classList.add("green");
+      //   });
+      //   btnBlue.addEventListener("click", () => {
+      //     colorbox.classList.remove("green", "blue", "red");
+      //     colorbox.classList.add("blue");
+      //   });
+    </script>
+  </body>
+</html>
