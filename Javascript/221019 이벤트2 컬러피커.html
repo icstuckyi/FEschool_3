@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>컬러피커</title>
+    <style>
+      :root {
+        --main-bgColor: teal;
+        --main-txtColor: white;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        font-size: 1.5em;
+        background-color: var(--main-bgColor);
+      }
+      .wrapper {
+        padding: 20px;
+        text-align: center;
+        background-color: white;
+      }
+      .picker {
+        display: inline-block;
+      }
+      .picker + .picker {
+        margin-left: 30px;
+      }
+      main {
+        color: var(--main-txtColor);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="wrapper">
+      <article class="picker">
+        <label for="bg">배경색 : </label>
+        <input type="color" id="bg" class="inp-picker" data-id="bgColor" />
+      </article>
+      <article class="picker">
+        <label for="txt">글씨색 : </label>
+        <input type="color" id="txt" class="inp-picker" data-id="txtColor" />
+      </article>
+    </section>
+    <main>
+      <h1>Color Picker!</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+        voluptates aspernatur. Voluptatum tenetur dolor illum ipsam dolores,
+        impedit quod officiis deserunt, vero qui eum. Facilis maiores tempore
+        voluptatibus cupiditate vel.
+      </p>
+    </main>
+    <script>
+      const inpPicker = document.querySelectorAll(".inp-picker");
+      inpPicker.forEach((item) => {
+        item.addEventListener("input", () => {
+          const name = `--main-${event.target.dataset.id}`;
+          const root = document.querySelector(":root");
+          root.style.setProperty(name, event.target.value);
+        });
+      });
+    </script>
+  </body>
+</html>
