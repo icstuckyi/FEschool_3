@@ -23,6 +23,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://icstuckyi.github.io/FEschool_3/index.html",
   "browserslist": {
     "production": [
       ">0.2%",
