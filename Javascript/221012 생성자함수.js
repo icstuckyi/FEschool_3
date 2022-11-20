@@ -29,7 +29,7 @@ let book3 = new Book("JS", 30, "유진", "24.12.30");
 console.log(book1, book2, book3);
 
 // new 키워드를 사용했을 경우
-function Book(책이름, 책가격, 저자, 출판일) {
+function Books(책이름, 책가격, 저자, 출판일) {
   // this = {}
   this.책이름 = 책이름;
   this.책가격 = 책가격;
