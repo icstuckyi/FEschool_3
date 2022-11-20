@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제코베 스토어 관리자 페이지 CRUD</title>
+  </head>
+  <body>
+    <button id="btn-load">상품불러오기</button>
+
+    <br /><br />
+    <label for="inp-name">상품이름</label>
+    <input id="inp-name" type="text" />
+
+    <br /><br />
+    <label for="inp-price">제품가격</label>
+    <input id="inp-price" type="number" />
+
+    <br /><br />
+    <label for="inp-stock">재고</label>
+    <input id="inp-stock" type="number" />
+
+    <br /><br />
+    <label for="inp-date">출시날짜</label>
+    <input id="inp-date" type="date" />
+
+    <button type="button" id="btn-register">상품등록하기</button>
+
+    <script>
+      const buttons = {
+        btnLoad: document.querySelector("#btn-load"),
+        btnRegister: document.querySelector("#btn-register"),
+        btnUpdate: document.querySelector(".btn-update"),
+      };
+      // const productInfo = {
+      //   productName: document.querySelector("#inp-name").value,
+      //   price: document.querySelector("#inp-price").value,
+      //   stockCount: document.querySelector("#inp-stock").value,
+      //   viewCount: 0,
+      //   pubDate: document.querySelector("#inp-date").value,
+      //   modDate: document.querySelector("#inp-date").value,
+      // };
+
+      // Read
+      buttons.btnLoad.addEventListener("click", (event) => {
+        fetch("http://localhost:3001/product", {
+          method: "GET",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            for (item of data) {
+              // console.log(item);
+              const $container = document.createElement("section");
+              const $productName = document.createElement("h2");
+              const $price = document.createElement("p");
+              const $btnUpdate = document.createElement("button");
+
+              $btnUpdate.classList.add("btn-update");
+              $productName.innerText = item.productName;
+              $price.innerText = item.price;
+              $btnUpdate.innerText = "업데이트";
+              $btnUpdate.addEventListener("click", (event) => {
+                updateItem();
+              });
+              $container.appendChild($productName);
+              $container.appendChild($price);
+              $container.appendChild($btnUpdate);
+
+              document.body.appendChild($container);
+            }
+          });
+      });
+
+      //create
+      buttons.btnRegister.addEventListener("click", (event) => {
+        // console.log("눌렀다.");
+        const productInfo = {
+          productName: document.querySelector("#inp-name").value,
+          price: document.querySelector("#inp-price").value,
+          stockCount: document.querySelector("#inp-stock").value,
+          viewCount: 0,
+          pubDate: document.querySelector("#inp-date").value,
+          modDate: document.querySelector("#inp-date").value,
+        };
+
+        fetch("http://localhost:3001/product", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(productInfo),
+        })
+          .then((response) => response.json())
+          .then((item) => {
+            const $container = document.createElement("section");
+            const $productName = document.createElement("h2");
+            const $price = document.createElement("p");
+            const $btnUpdate = document.createElement("button");
+
+            $btnUpdate.classList.add("btn-update");
+            $productName.innerText = item.productName;
+            $price.innerText = item.price;
+            $btnUpdate.innerText = "업데이트";
+            $btnUpdate.addEventListener("click", (event) => {
+              updateItem();
+            });
+            $container.appendChild($productName);
+            $container.appendChild($price);
+            $container.appendChild($btnUpdate);
+            document.body.appendChild($container);
+          });
+      });
+
+      // update
+      function updateItem() {
+        fetch("http://localhost:3001/product/1", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            productName: "안녕",
+            id: 1,
+          }),
+        })
+          .then((response) => response.json())
+          .then((item) => console.log(item));
+      } //1. 인자로 넘긴 업데이트 데이터 말고 건드리지 않았던 데이터를 살리는 방법
+      // 2. item 의 id를 넘기는 방법
+      // 3. 왜 업데이트 버튼을 누르면 한번 불러오기한 list가 사라지는지?
+      // 4. fetch 의 id와 각각 업데이트버튼을 연결하는 방법
+
+      // delete
+    </script>
+  </body>
+</html>

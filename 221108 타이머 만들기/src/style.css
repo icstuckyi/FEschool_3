@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@import "./reset.css";
+body {
+  font-family: "Pretendard-Bold";
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    96.74% 276.79% at 3.59% 5.28%,
+    #f0f4ff 0%,
+    #a5b6ee 100%
+  );
+  color: white;
+  box-sizing: border-box;
+}
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 14px;
+  color: #8596bf;
+}
+h1 {
+  margin: 85px auto 60px;
+  text-align: center;
+}
+h1 img {
+  height: 36px;
+}
+#root {
+  width: 400px;
+  height: 360px;
+  margin: 0px auto;
+  background: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+  border-radius: 16px;
+}
+#root h2 {
+  text-align: center;
+  margin: 0;
+  padding-top: 48px;
+  padding-bottom: 23px;
+}
+#timeInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#timeInput > img {
+  display: block;
+  width: 6px;
+  height: 26px;
+  padding-top: 27px;
+  margin: 0px 8px;
+  /* top: 10px;
+    bottom: 27px;
+    position: absolute; */
+}
+#timeInput > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#timeInput strong {
+  line-height: 14px;
+  text-align: center;
+  font-size: 12px;
+  color: #a5b6ee;
+}
+
+#timeInput button {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  margin-top: 4px;
+  /* position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%; */
+  background: linear-gradient(314.28deg, #304577 0%, #4c65a0 83%);
+  border: 1px solid #354971;
+  border-radius: 4px;
+  color: white;
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+}
+#timer {
+  text-align: center;
+}
+#timer > button {
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  color: #617199;
+  font-size: 14px;
+  width: 112px;
+  height: 48px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
