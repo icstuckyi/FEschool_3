@@ -56,9 +56,10 @@
               const $price = document.createElement("p");
               const $btnUpdate = document.createElement("button");
 
-              $btnUpdate.classList.add("btn-update");
+              $btnUpdate.classList.add(`btn-update${item.id}`);
               $productName.innerText = item.productName;
               $price.innerText = item.price;
+              $container.classList.add("id" + item.id);
               $btnUpdate.innerText = "업데이트";
               $btnUpdate.addEventListener("click", (event) => {
                 updateItem();
@@ -96,9 +97,10 @@
             const $price = document.createElement("p");
             const $btnUpdate = document.createElement("button");
 
-            $btnUpdate.classList.add("btn-update");
+            $btnUpdate.classList.add(`btn-update${item.id}`);
             $productName.innerText = item.productName;
             $price.innerText = item.price;
+            $container.classList.add("id" + item.id);
             $btnUpdate.innerText = "업데이트";
             $btnUpdate.addEventListener("click", (event) => {
               updateItem();
@@ -111,19 +113,68 @@
       });
 
       // update
+      // 업데이트 버튼을 클릭하면 일어나는 일
+      // 1. 업데이트 버튼의 innerText가 "저장하기"로 바뀜
+      // 2. h2, p 밑에 updateName input창, updatePrice input창 붙임(appendChild)
+      // 3. updateName 과 updatePrice를 다 채우고 "저장하기"를 누르면
+      // 3-1. 두 input창 내용 지워짐
+      // 3-2. input창의 value가 JSON에 덧씌워짐
       function updateItem() {
-        fetch("http://localhost:3001/product/1", {
+        const $container = document.querySelector("section");
+        const $productName = document.querySelector("h2");
+        const $price = document.querySelector("p");
+        const $btnUpdate = document.querySelector(".btn-update");
+
+        const productInfo = {
+          productName: document.querySelector("#inp-name").value,
+          price: document.querySelector("#inp-price").value,
+          stockCount: document.querySelector("#inp-stock").value,
+          viewCount: 0,
+          pubDate: document.querySelector("#inp-date").value,
+          modDate: document.querySelector("#inp-date").value,
+        };
+
+        fetch(`http://localhost:3001/product/${item.id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            productName: "안녕",
-            id: 1,
+            productNameproductInfo.productName,
+            price: productInfo.price,
+            stockCount: productInfo.stockCount,
+            viewCount: 0,
+            pubDate: productInfo.pubDate,
+            modDate: productInfo.modDate,
           }),
-        })
-          .then((response) => response.json())
-          .then((item) => console.log(item));
-      } //1. 인자로 넘긴 업데이트 데이터 말고 건드리지 않았던 데이터를 살리는 방법
-      // 2. item 의 id를 넘기는 방법
+        });
+        // .then((response) => response.json())
+        // .then((item) => {
+        //   const $productName = document.querySelector("h2");
+        //   const $price = document.querySelector("p");
+        //   const $container = document.createElement("section");
+
+        //   $btnUpdate.classList.add(`btn-update${item.id}`);
+        //   $productName.innerText = item.productName;
+        //   $price.innerText = item.price;
+        //   $container.classList.add("id" + item.id);
+        //   $btnUpdate.innerText = "업데이트";
+        //   $btnUpdate.addEventListener("click", (event) => {
+        //     updateItem();
+        //   });
+        //   $container.appendChild($productName);
+        //   $container.appendChild($price);
+        //   $container.appendChild($btnUpdate);
+        //   document.body.appendChild($container);
+        // });
+      }
+
+      //   if ($btnUpdate.innerText === "업데이트") {
+      //     $btnUpdate.innerText = "저장하기";
+      //   }
+
+      //   document.body.appendChild($container);
+      // }
+
+      // 1. 인자로 넘긴 업데이트 데이터 말고 건드리지 않았던 데이터를 살리는 방법
       // 3. 왜 업데이트 버튼을 누르면 한번 불러오기한 list가 사라지는지?
       // 4. fetch 의 id와 각각 업데이트버튼을 연결하는 방법
 
