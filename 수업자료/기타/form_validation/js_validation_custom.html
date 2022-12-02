@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <body>
+    <form action="submit">
+      <label for="txt">이메일 입력 : </label>
+      <input
+        type="email"
+        id="txt"
+        required
+        pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]*\.[a-zA-Z]*"
+      />
+      <button>제출</button>
+    </form>
+
+    <script>
+      /**
+       * ValidityState {
+       *   badInput: false,  // 잘못된 입력
+       *   customError: false, // 커스텀 오류
+       *   patternMismatch: false, // 패턴 오류
+       *   rangeOverflow: false, // 범위 초과 오류
+       *   rangeUnderflow: false, // 범위 미달 오류
+       *   stepMismatch: false, // 간격 오류
+       *   tooLong: false, // 길이 오류
+       *   tooShort: false, // 길이 오류
+       *   typeMismatch: false, // 타입 오류
+       *   valid: false, // 검증 결과
+       *   valueMissing: true // 필수값 오류
+       * }
+       */
+      const inp = document.querySelector("input");
+      // submit 이벤트로 걸지 않고 input 이벤트로 건다.
+      // 왜냐면 form 안에 input이 여러개일 때 하나씩 validation하기 위해서이다.
+      inp.addEventListener("input", () => {
+        if (inp.validity.typeMismatch) {
+          inp.setCustomValidity("알맞은 양식의 이메일 주소를 입력하세요.");
+        } else {
+          inp.setCustomValidity("");
+        }
+      });
+    </script>
+  </body>
+</html>

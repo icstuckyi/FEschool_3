@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>validation 연습</title>
+  </head>
+  <body>
+    <p>
+      사용자가 입력한 비밀번호를 벨리데이션하는 폼을 만들어 봅시다.<br />
+      input은 비밀번호, 비밀번호 확인 두 가지가 있어야하며 이때 만약 <br />
+      1.input에 아무것도 입력하지 않았거나 <br />
+      2. 비밀번호 input과 비밀번호 확인 input의 값이 동일하지 않거나, <br />
+      3. 비밀번호의 패턴이 정규표현식과 일치하지 않은 경우 <br />
+      에러메시지를 출력하도록 만들어보세요.<br />
+      비밀번호 패턴:
+      pattern="(?=.*[!@#$%^&*()_+=-])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}"
+    </p>
+    <hr />
+    <form action="">
+      <p>
+        <label for="pw">1. 비밀번호를 입력하세요.</label><br />
+        <input
+          type="password"
+          id="pw"
+          pattern="(?=.*[!@#$%^&*()_+=-])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}"
+          required
+        />
+      </p>
+      <p>
+        <label for="pw2">2. 1에서 입력한 비밀번호를 다시 한번 입력하세요.</label
+        ><br />
+        <input type="password" id="pw2" required />
+      </p>
+      <button id="btn">제출하기</button>
+    </form>
+    <script>
+      const pw = document.querySelector("#pw");
+      const inputs = document.querySelectorAll("input");
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListner("click", () => {
+        inputs.forEach((item) => validate(item));
+      });
+
+      function validate(target) {
+        if (target.validity.valueMissing) {
+          target.setCustomValidity("입력창을 채워주세요.");
+        }
+        // 1번째 input순회에서는 비교하는 게 무의미하다.
+        // 2번째 input순회일 경우에 1번째 input과 비교한다.
+        else if (target.id === "pw2") {
+          // 내부if문: pw2의 value가 pw의 value와 다르다면
+          if (target.value !== pw.value) {
+            target.setCustomValidity("동일한 비밀번호를 입력해주세요.");
+          } else {
+            target.setCustomValidity("");
+          }
+        } else if (target.validity.typeMismatch) {
+          target.setCustomValidity("입력 값이 정해진 형식과 다릅니다.");
+        } else {
+          target.setCustomValidity("");
+        }
+      }
+    </script>
+  </body>
+</html>
