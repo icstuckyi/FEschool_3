@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./Login.module.css";
 import { useState } from "react";
+import { useLogin } from "./../../hooks/useLogin";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { error, isPending, login } = useLogin();
 
   // handleData는 eventListener이다.
   const handleData = (event) => {
@@ -17,7 +19,8 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(email, password);
+    login(email, password);
+    console.log(email, password);
   };
 
   return (
@@ -43,7 +46,14 @@ export default function Login() {
           required
         />
 
-        <button type="submit">로그인</button>
+        {/* && 연산자를 이용한 조건부 렌더링 */}
+        {!isPending && (
+          <button type="submit" className={styles.btn}>
+            로그인
+          </button>
+        )}
+        {isPending && <strong>로그인 중입니다...</strong>}
+        {error && <strong>{error}</strong>}
       </fieldset>
     </form>
   );
